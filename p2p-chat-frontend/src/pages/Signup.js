@@ -19,7 +19,10 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/signup", formData);
+      await axios.post(
+        "https://pumpkin-assignment-wii6.onrender.com/signup",
+        formData
+      );
       navigate("/login");
     } catch (err) {
       setError(err.response?.data?.error || "Signup failed");

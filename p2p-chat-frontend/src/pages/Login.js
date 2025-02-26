@@ -16,7 +16,7 @@ const Login = ({ setUser }) => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "http://localhost:5000/login",
+        "https://pumpkin-assignment-wii6.onrender.com/login",
         formData
       );
       localStorage.setItem("token", data.token);

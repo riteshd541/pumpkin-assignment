@@ -6,7 +6,7 @@ import "./Chat.css";
 
 import axios from "axios";
 
-const socket = io("http://localhost:5000", {
+const socket = io("https://pumpkin-assignment-wii6.onrender.com", {
   transports: ["websocket"],
   reconnection: true, // Ensures the client reconnects if the connection drops
   reconnectionAttempts: 10, // Limits reconnection attempts
@@ -30,7 +30,9 @@ const Chat = ({ user }) => {
     // Fetch all users except logged-in user
     axios
       .get(
-        `http://localhost:5000/users?userId=${localStorage.getItem("userId")}`
+        `https://pumpkin-assignment-wii6.onrender.com/users?userId=${localStorage.getItem(
+          "userId"
+        )}`
       )
       .then((res) => setUsers(res.data))
       .catch((err) => console.error("Error fetching users:", err));
